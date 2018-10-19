@@ -16,3 +16,32 @@ CREATE MULTISET TABLE itsp_amr.vk_listening,
       songs_completed int    
       )
 PRIMARY INDEX (uid,rptg_dt,country_cd);
+---------------------
+CREATE MULTISET TABLE itsp_amr.vk_subscription,
+     NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+      uid int, 
+      country_cd int,
+      sub_type VARCHAR(15),
+      paid_month int,
+      trial_paid VARCHAR(10), 
+      referral_src VARCHAR(30)
+      )
+PRIMARY INDEX (uid);
+----------------------
+CREATE MULTISET TABLE itsp_amr.vk_demographics,
+     NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+      uid int, 
+      birth_year varchar(4),
+      gender_cd VARCHAR(1)
+      )
+PRIMARY INDEX (uid);
