@@ -3,6 +3,30 @@ WbImport
      -mode='insert'
      -extension=csv
      -delimiter=','
+     -file=/Users/vineeta/Desktop/1.Demographics.csv
+     -table=itsp_amr.vk_demographics
+     -header=true
+     -badfile=reject_list
+     -commitEvery=1000
+;
+
+WbImport 
+     -type=text
+     -mode='insert'
+     -extension=csv
+     -delimiter=','
+     -file=/Users/vineeta/Desktop/2.Subscription.csv
+     -table=itsp_amr.vk_subscription
+     -header=true
+     -badfile=reject_list
+     -commitEvery=1000
+;
+
+WbImport 
+     -type=text
+     -mode='insert'
+     -extension=csv
+     -delimiter=','
      -file=/Users/vineeta/Desktop/3.Listening.csv
      -table=itsp_amr.vk_listening
      -header=true
