@@ -1,0 +1,44 @@
+sessions 2;
+errlimit 100;
+logon eddies/hydra_biz_user,bagtossdotcom123!;
+
+
+drop table itsp_amr.vk_error1;
+drop table itsp_amr.vk_error2;
+drop table itsp_amr.vk_test;
+
+CREATE MULTISET TABLE itsp_amr.vk_test,
+     NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+      id_id int, 
+      name_name VARCHAR(20)
+      )
+PRIMARY INDEX (id_id);
+
+set record vartext "|"; 
+
+DEFINE 
+id_id (VARCHAR(20)),
+name_name (VARCHAR(20))
+
+file=/Users/vineeta/Desktop/sample.txt;
+
+show;
+BEGIN LOADING itsp_amr.vk_test
+ERRORFILES    itsp_amr.vk_error1,
+              itsp_amr.vk_error2
+;
+
+
+INSERT INTO itsp_amr.vk_test
+VALUES (
+:id_id
+:name_name
+) ;  
+
+END LOADING;
+logoff;
