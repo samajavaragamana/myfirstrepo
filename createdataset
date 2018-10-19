@@ -1,0 +1,18 @@
+CREATE MULTISET TABLE itsp_amr.vk_listening,
+     NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+      uid int, 
+      rptg_dt date format 'MM/DD/YY',
+      country_cd int,
+      device_info	VARCHAR(250), 
+      container_type VARCHAR (50),
+      container_id VARCHAR (50),
+      song_duration	int,
+      songs_started	int,
+      songs_completed int    
+      )
+PRIMARY INDEX (uid,rptg_dt,country_cd);
