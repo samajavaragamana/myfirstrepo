@@ -1,0 +1,11 @@
+WbImport 
+     -type=text
+     -mode='insert'
+     -extension=csv
+     -delimiter=','
+     -file=/Users/vineeta/Desktop/3.Listening.csv
+     -table=itsp_amr.vk_listening
+     -header=true
+     -badfile=reject_list
+     -commitEvery=1000
+;
