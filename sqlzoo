@@ -1,11 +1,21 @@
-tables are organized in schemas
+Tables are organized in schemas
+
 Display a string "SQL" select "hello": select 'hello'
+
 Display three numbers {5,10,15} in three columns: select 5,10,15
+
 Display sum of two numbers 10 and 15: select 10+15
+
 Default order: ascending
-order by can only be used in outer query
+
+Order by can only be used in outer query
+
 between 1980 and 1989 includes both years
+
 if query has 'having' statement, it should ALWAYS be preceded by group by
+
 you dont need group by in this statement: select count(name), count(mobile) from teacher
+
+Find the country that has all the vowels and no spaces in its name: select name from world where name like '%a%' and name like '%e%' and name like '%i%' and name like '%o%' and name like '%u%' and name not like '% %' 
 
 case when can be used in order by statement: ORDER BY CASE WHEN subject IN ('Chemistry','Physics') THEN 1 ELSE 0 END, subject, winner
